@@ -20,7 +20,7 @@ from django.contrib import admin
 from story.views import home
 from story.views import story
 from pictures.views import pictures
-from story.views import specific
+from story.views import login_view, specific
 from story.views import post_new
 
 
@@ -35,6 +35,9 @@ urlpatterns = [
     url(r'^story/newpost/$', post_new, name='post_new'),
     url(r'^story/', story),
     url(r'^pictures/', pictures),
+
+    url(r'^login/', login_view),
+
     url(r'^$', home),
 
 ]
