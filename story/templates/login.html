@@ -1,0 +1,12 @@
+{% extends "base_temp.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}
+

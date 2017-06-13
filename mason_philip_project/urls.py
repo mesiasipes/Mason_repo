@@ -17,11 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 #from django.contrib.auth import views as auth_views
 
-from story.views import home
-from story.views import story
 from pictures.views import pictures
-from story.views import specific
-from story.views import post_new
+from story.views import home, login_view, post_new, specific, story
+
 
 
 urlpatterns = [
@@ -36,5 +34,6 @@ urlpatterns = [
     url(r'^story/', story),
     url(r'^pictures/', pictures),
     url(r'^$', home),
+    url(r'^login/', login_view)
 
 ]
