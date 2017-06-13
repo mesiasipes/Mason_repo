@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+	<title>{% block title %} Mason's Place {% endblock title %}</title>
+
+	<style>
+
+		body {
+			background-color: lightgrey
+		}
+
+		#sidebar {
+			float: left;
+			height: 100%;
+			background-color: green
+		}
+
+		#content {
+			float: right;
+			width: 88%;
+			background-color: grey;
+			padding:5px;
+		}
+
+	</style>
+
+	</head>
+
+	<body>
+
+	<div id="sidebar">
+
+	{% block sidebar %}
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/story">BLOG</a></li>
+		<li><a href='/pictures/'>PICTURES</a></li>
+	</ul>
+	{% endblock sidebar %}
+
+	</div>
+
+	<div id="content">
+
+		{% block content %}{% endblock content %}
+
+	</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,28 @@
+{% extends "base_temp.html" %}
+
+
+<!DOCTYPE html>
+
+<html>
+
+{% block title %}Pictures{% endblock title %}
+
+{% block content %}
+
+	<h1>Pictures</h1>
+
+	<HR>
+
+	{% for pic in pics reversed %}
+
+	{{ pic.picture }}
+	<br>
+	{{ pic.created_date }}
+	<br>
+	{{ pic.info }}
+
+	{% endfor %}
+
+{% endblock content %}
+
+</html>
