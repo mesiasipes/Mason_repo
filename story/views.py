@@ -7,21 +7,21 @@ from story.forms import PostForm
 
 
 def home(request):
-	return render(request, 'base.html')
+    return render(request, 'base.html')
 
 
 def story(request):
-	context = {
-		'posts': Post.objects.all()
-	}
-	return render(request, 'blog_homepage.html', context)
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'blog_homepage.html', context)
 
 
 def specific(request, blog_id):
-	context = {
-		'post': Post.objects.get(id=blog_id)
-	}
-	return render(request, 'specific_blogpage.html', context)
+    context = {
+        'post': Post.objects.get(id=blog_id)
+    }
+    return render(request, 'specific_blogpage.html', context)
 
 
 def post_new(request):
@@ -32,7 +32,11 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return render(request, 'blog_homepage.html', )
+
+            context = {
+                'posts': Post.objects.all()
+            }
+            return render(request, 'blog_homepage.html', context)
     else:
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
